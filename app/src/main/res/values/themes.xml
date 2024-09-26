@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="Theme.MyHealth" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+</resources>
