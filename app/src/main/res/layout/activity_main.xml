@@ -7,33 +7,6 @@
     tools:context=".pages.MainPageActivity">
 
     <!-- Заголовок для лекарств -->
-    <Button
-        android:id="@+id/profileButton2"
-        android:layout_width="205.5dp"
-        android:layout_height="70dp"
-        android:background="#7C7972"
-        android:text="Профиль"
-        android:textColor="#C3B4B4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/mainButton2"
-        android:layout_width="205.5dp"
-        android:layout_height="70dp"
-        android:background="#7C7972"
-        android:text="Главная"
-        android:textColor="#C3B4B4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
     <!-- Заголовок для анализов -->
 
@@ -46,6 +19,34 @@
     <!-- Кнопка Профиль -->
 
     <!-- Floating Action Button -->
+
+    <Button
+        android:id="@+id/mainButton"
+        android:layout_width="205.5dp"
+        android:layout_height="70dp"
+        android:background="#7C7972"
+        android:text="Главная"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/profileButton"
+        android:layout_width="205.5dp"
+        android:layout_height="70dp"
+        android:background="#7C7972"
+        android:text="Профиль"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ExpandableListView
         android:id="@+id/expandableListView"
@@ -70,6 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.905"
-        app:srcCompat="@drawable/pluswhite" />
+        app:srcCompat="@drawable/pluswhite"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
