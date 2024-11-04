@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/editProfileButton"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:text="Редактировать профиль"
+        android:textColor="#424242"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/addAnalyzesButton"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:text="Добавить анализ"
+        android:textColor="#424242"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addMedButton"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/addAppointmentButton"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:text="Добавить запись к врачу"
+        android:textColor="#424242"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addAnalyzesButton"
+        app:layout_constraintVertical_bias="0.079" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:text="Выйти из аккаунта"
+        android:textColor="#424242"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addAppointmentButton"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="750dp"
+        android:layout_height="45dp"
+        android:text="ID: 12345678"
+        android:textColor="#575651"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <Button
+        android:id="@+id/addMedButton"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:text="Добавить лекарство"
+        android:textColor="#424242"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileButton"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="750dp"
+        android:layout_height="45dp"
+        android:text="Алексей"
+        android:textColor="#575651"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <Button
+        android:id="@+id/profileButton"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#7C7972"
+        android:text="Профиль"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mainButton"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/mainButton"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#7C7972"
+        android:text="Главная"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/profileButton"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

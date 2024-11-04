@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/newNameEnter"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="  Введите новое имя"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/editPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="0.814" />
+
+    <EditText
+        android:id="@+id/newPasswordEnter"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="  Введите новый пароль"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/newPasswordRepeat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:background="#FF5722"
+        android:backgroundTint="#FF5722"
+        android:text="Удалить аккаунт"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/newPasswordRepeat"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="  Повторите новый пароль"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/deleteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="0.869" />
+
+    <EditText
+        android:id="@+id/oldPasswordEnter"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="  Введите старый пароль"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/newPasswordEnter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="0.99" />
+
+    <TextView
+        android:id="@+id/editPassword"
+        android:layout_width="750dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="8dp"
+        android:text="   Изменение пароля"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/oldPasswordEnter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="750dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="ID: 12345678"
+        android:textColor="#575651"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:background="#00FFFFFF"
+        android:text="Назад"
+        android:textColor="#7C7972"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.151"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:background="#00FFFFFF"
+        android:text="Сохранить"
+        android:textColor="#7C7972"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.151"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/saveImage"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/savebutton" />
+
+    <ImageView
+        android:id="@+id/backImage"
+        android:layout_width="86dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backbutton" />
+
+    <Button
+        android:id="@+id/profileButton"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#7C7972"
+        android:text="Профиль"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/mainButton"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/mainButton"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="#7C7972"
+        android:text="Главная"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/profileButton"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

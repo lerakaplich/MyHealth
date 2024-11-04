@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/add_medication"
+        android:title="Добавить лекарство"/>
+    <item
+        android:id="@+id/add_analysis"
+        android:title="Добавить анализ"/>
+    <item
+        android:id="@+id/add_appointment"
+        android:title="Добавить запись к врачу"/>
+</menu>
