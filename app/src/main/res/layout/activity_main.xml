@@ -20,6 +20,22 @@
 
     <!-- Floating Action Button -->
 
+    <TextView
+        android:id="@+id/addText2"
+        android:layout_width="348dp"
+        android:layout_height="49dp"
+        android:layerType="software"
+        android:text="Статистика MyHealth"
+        android:textColor="#575651"
+        android:textSize="34sp"
+        android:typeface="sans"
+        app:layout_constraintBottom_toTopOf="@+id/expandableListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648" />
+
     <Button
         android:id="@+id/mainButton"
         android:layout_width="205.5dp"
@@ -32,7 +48,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/profileButton"
@@ -46,18 +63,19 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
 
     <ExpandableListView
         android:id="@+id/expandableListView"
-        android:layout_width="414dp"
-        android:layout_height="523dp"
+        android:layout_width="408dp"
+        android:layout_height="559dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
+        app:layout_constraintVertical_bias="0.802" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

@@ -2,13 +2,14 @@ package com.kaplich.myhealth.pages
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.kaplich.myhealth.R
+import com.kaplich.myhealth.database.DatabaseHelper
+import kotlin.random.Random
 
 class RegistrationActivity : AppCompatActivity() {
 
@@ -19,12 +20,14 @@ class RegistrationActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var labelTextView: TextView
 
+    private lateinit var dbHelper: DatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
+        dbHelper = DatabaseHelper(this)
         initializeViews()
-
         setupListeners()
     }
 
@@ -40,13 +43,28 @@ class RegistrationActivity : AppCompatActivity() {
     private fun setupListeners() {
         signUpButton.setOnClickListener {
             if (validateRegistrationData()) {
-                // Если учетные данные валидны, переходим на страницу профиля
-                val intent = Intent(this, ProfileActivity::class.java)
-                startActivity(intent)
-                finish()
+                // Генерация случайного ID пользователя
+                val name = nameEditText.text.toString().trim()
+                val password = passwordEditText.text.toString().trim()
+
+                // Добавьте данные пользователя в базу
+                val newUserId = dbHelper.addUser(name, password)
+
+                if (newUserId != -1L) {
+                    Toast.makeText(this, "Регистрация успешна", Toast.LENGTH_SHORT).show()
+
+                    // Передача userId на страницу профиля
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    intent.putExtra("USER_ID", newUserId.toInt()) // Передача userId
+                    startActivity(intent)
+                    finish()
+                } else {
+                    showErrorMessage("Ошибка при регистрации, попробуйте еще раз")
+                }
             }
         }
-        loginButton.setOnClickListener{
+
+        loginButton.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
@@ -71,13 +89,7 @@ class RegistrationActivity : AppCompatActivity() {
                 showErrorMessage("Пароли не совпадают")
                 false
             }
-            else -> {
-                // Здесь должна быть логика регистрации
-                // Например, запрос к серверу или сохранение в локальном хранилище
-                // Для простоты примера мы просто завершаем активность
-                finish()
-                true
-            }
+            else -> true
         }
     }
 

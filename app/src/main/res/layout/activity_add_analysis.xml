@@ -7,6 +7,21 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="76dp">
 
+    <EditText
+        android:id="@+id/analysisCommentEnter"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:hint="  Добавьте комментарий"
+        android:inputType="text"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.391" />
+
     <Button
         android:id="@+id/saveButton"
         android:layout_width="180dp"
@@ -21,7 +36,8 @@
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.071"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
         android:id="@+id/backImage"
@@ -62,7 +78,8 @@
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.072"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/mainButton"
@@ -76,7 +93,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/profileButton"
@@ -90,7 +108,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/addText"
@@ -108,7 +127,7 @@
         app:layout_constraintVertical_bias="0.214" />
 
     <EditText
-        android:id="@+id/dateAnalysisEnter"
+        android:id="@+id/dataAnalysisEnter"
         android:layout_width="315dp"
         android:layout_height="48dp"
         android:background="#FFA500"
@@ -121,23 +140,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintVertical_bias="0.312" />
 
-    <EditText
-        android:id="@+id/analysisCommentEnter"
-        android:layout_width="315dp"
-        android:layout_height="48dp"
-        android:background="#FFA500"
-        android:ems="10"
-        android:hint="  Добавьте комментарий"
-        android:inputType="text"
-        android:textSize="16sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

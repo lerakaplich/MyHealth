@@ -7,6 +7,7 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="76dp">
 
+
     <Button
         android:id="@+id/saveButton"
         android:layout_width="180dp"
@@ -21,7 +22,8 @@
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.071"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
         android:id="@+id/backImage"
@@ -62,7 +64,8 @@
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.072"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/mainButton"
@@ -76,7 +79,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/profileButton"
@@ -90,7 +94,53 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/medEnter"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:ems="10"
+        android:hint="  Введите название препарата"
+        android:inputType="text"
+        android:layerType="software"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:typeface="sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.319" />
+
+
+    <Spinner
+        android:id="@+id/medTypeSpinner"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:layerType="software"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.408" />
+
+    <Spinner
+        android:id="@+id/periodMedSpinner"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:layerType="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/medStartDate"
@@ -104,10 +154,9 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintVertical_bias="0.588" />
 
     <EditText
         android:id="@+id/medEndDate"
@@ -115,96 +164,16 @@
         android:layout_height="48dp"
         android:background="#FFA500"
         android:ems="10"
-        android:hint="  Введите дату окончания приёма"
+        android:hint="  Введите дату окончания приёма "
         android:inputType="date"
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.629" />
-
-    <EditText
-        android:id="@+id/medEnter"
-        android:layout_width="315dp"
-        android:layout_height="48dp"
-        android:background="#FFA500"
-        android:ems="10"
-        android:hint="  Введите название препарата"
-        android:inputType="text"
-        android:layerType="software"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="italic"
-        android:typeface="sans"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.312" />
-
-    <Spinner
-        android:id="@+id/medTypeSpinner"
-        android:layout_width="157.5dp"
-        android:layout_height="48dp"
-        android:background="#FFA500"
-        android:layerType="software"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.807"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
-
-    <Spinner
-        android:id="@+id/periodMedSpinner"
-        android:layout_width="157.5dp"
-        android:layout_height="48dp"
-        android:background="#FFA500"
-        android:layerType="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
-
-    <TextView
-        android:id="@+id/periodMed"
-        android:layout_width="157.5dp"
-        android:layout_height="48dp"
-        android:background="#FFA500"
-        android:gravity="center_horizontal|center_vertical"
-        android:layerType="software"
-        android:text="Частота приёма"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:typeface="sans"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.192"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
-
-    <TextView
-        android:id="@+id/medType"
-        android:layout_width="157.5dp"
-        android:layout_height="48dp"
-        android:background="#FFA500"
-        android:gravity="center_horizontal|center_vertical"
-        android:layerType="software"
-        android:text="Вид препарата"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:typeface="sans"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        app:layout_constraintVertical_bias="0.68" />
 
     <TextView
         android:id="@+id/addText"
@@ -219,6 +188,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.214" />
+        app:layout_constraintVertical_bias="0.244" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

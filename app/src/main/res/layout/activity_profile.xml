@@ -10,7 +10,7 @@
         android:id="@+id/name"
         android:layout_width="315dp"
         android:layout_height="45dp"
-        android:text="Валерия"
+        android:text="Алексей"
         android:textColor="#575651"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,18 +38,15 @@
         android:id="@+id/addMedButton"
         android:layout_width="315dp"
         android:layout_height="48dp"
-
         android:background="#FFA500"
         android:text="Добавить лекарство"
         android:textColor="#424242"
-        app:barrierMargin="@dimen/material_emphasis_high_type"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.409"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.409" />
 
     <Button
         android:id="@+id/addAnalyzesButton"
@@ -58,14 +55,26 @@
         android:background="#FFA500"
         android:text="Добавить анализ"
         android:textColor="#424242"
-        app:barrierMargin="@dimen/material_emphasis_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+        android:id="@+id/addAppointmentButton"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:background="#FFA500"
+        android:text="Добавить запись к врачу"
+        android:textColor="#424242"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.589" />
 
     <Button
         android:id="@+id/saveButton"
@@ -74,13 +83,12 @@
         android:background="#FFA500"
         android:text="Выйти из аккаунта"
         android:textColor="#424242"
-        app:barrierMargin="@dimen/material_emphasis_high_type"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588" />
+        app:layout_constraintVertical_bias="0.68" />
 
     <Button
         android:id="@+id/editProfileButton"
@@ -89,14 +97,12 @@
         android:background="#FFA500"
         android:text="Редактировать профиль"
         android:textColor="#424242"
-        app:barrierMargin="@dimen/material_emphasis_high_type"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.32" />
 
     <Button
         android:id="@+id/mainButton"
@@ -129,4 +135,3 @@
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-    <!--android:background="#FFBC6B"/>-->
