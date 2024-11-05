@@ -83,7 +83,9 @@ class ProfileEditActivity : AppCompatActivity() {
         }
 
         backButton.setOnClickListener {
-            finish()
+            val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("USER_ID", userId) // Передаем userId
+            startActivity(intent)
         }
 
         deleteButton.setOnClickListener {
@@ -98,28 +100,39 @@ class ProfileEditActivity : AppCompatActivity() {
         val newPassword = newPasswordEditText.text.toString().trim()
         val newPasswordRepeat = newPasswordRepeatEditText.text.toString().trim()
 
-        if (newName.isEmpty() || oldPassword.isEmpty() || newPassword.isEmpty() || newPasswordRepeat.isEmpty()) {
-            Toast.makeText(this, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show()
+        // Если оба поля пустые, просим заполнить хотя бы одно
+        if (newName.isEmpty() && oldPassword.isEmpty() && newPassword.isEmpty() && newPasswordRepeat.isEmpty()) {
+            Toast.makeText(this, "Заполните хотя бы одно поле для изменения", Toast.LENGTH_SHORT).show()
             return
         }
 
-        if (newPassword != newPasswordRepeat) {
+        // Проверка на совпадение паролей, если только пароль должен быть обновлен
+        if (newPassword.isNotEmpty() && newPassword != newPasswordRepeat) {
             Toast.makeText(this, "Новые пароли не совпадают", Toast.LENGTH_SHORT).show()
             return
         }
 
+        // Если требуется обновление пароля, проверяем старый пароль
         val user = dbHelper.getUser(userId)
-        if (user == null || user.password != oldPassword) {
+        if (newPassword.isNotEmpty() && (user == null || user.password != oldPassword)) {
             Toast.makeText(this, "Неправильный старый пароль", Toast.LENGTH_SHORT).show()
             return
         }
 
-        if (dbHelper.updateUserInfo(userId, newName, newPassword)) {
+        // Обновляем только заполненные поля
+        val updateName = newName.isNotEmpty()
+        val updatePassword = newPassword.isNotEmpty()
+
+        if (dbHelper.updateUserInfo(userId, if (updateName) newName else null, if (updatePassword) newPassword else null)) {
             Toast.makeText(this, "Данные обновлены", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("USER_ID", userId) // Передаем userId
+            startActivity(intent)
         } else {
             Toast.makeText(this, "Ошибка при обновлении данных", Toast.LENGTH_SHORT).show()
         }
     }
+
 
     private fun deleteUser() {
         if (dbHelper.deleteUser(userId)) {

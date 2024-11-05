@@ -184,15 +184,21 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, "myhealth.db"
 
 
 
-    fun updateUserInfo(userId: Int, newName: String, newPassword: String): Boolean {
+    fun updateUserInfo(userId: Int, newName: String?, newPassword: String?): Boolean {
         val db = writableDatabase
-        val values = ContentValues().apply {
-            put("name", newName)
-            put("password", newPassword)
+        val values = ContentValues()
+
+        if (newName != null) values.put("name", newName)
+        if (newPassword != null) values.put("password", newPassword)
+
+        return if (values.size() > 0) {
+            val rowsAffected = db.update("users", values, "_id = ?", arrayOf(userId.toString()))
+            rowsAffected > 0
+        } else {
+            false
         }
-        val rowsAffected = db.update("users", values, "_id = ?", arrayOf(userId.toString()))
-        return rowsAffected > 0
     }
+
 
     fun deleteUser(userId: Int): Boolean {
         val db = writableDatabase

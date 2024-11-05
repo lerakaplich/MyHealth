@@ -7,6 +7,12 @@ android {
     namespace = "com.kaplich.myhealth"
     compileSdk = 34
 
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt") // Используем file() для указания пути
+        }
+    }
+
     defaultConfig {
         applicationId = "com.kaplich.myhealth"
         minSdk = 24

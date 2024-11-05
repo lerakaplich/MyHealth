@@ -55,19 +55,44 @@ class AddAppointmentActivity : AppCompatActivity() {
 
     private fun setupListeners() {
         saveButton.setOnClickListener {
-            saveAppointment()
+            val doctorSpecialization = doctorEditText.text.toString().trim()
+            val appointmentDate =dateEditText.text.toString().trim()
+            val comment = commentEditText.text.toString().trim()
+
+            // Валидация данных
+            if (appointmentDate.isNotEmpty()) {
+                val result = dbHelper.addAppointment(userId, doctorSpecialization, appointmentDate, comment)
+                if (result != -1L) {
+                    Toast.makeText(this, "Запись сохранена", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    intent.putExtra("USER_ID", userId) // Передаем userId
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Ошибка при сохранении", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Пожалуйста, заполните дату записи к врачу", Toast.LENGTH_SHORT).show()
+            }
         }
 
+
+
         backButton.setOnClickListener {
-            navigateToProfile()
+            val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("USER_ID", userId) // Передаем userId
+            startActivity(intent)
         }
 
         mainButton.setOnClickListener {
-            navigateToMain()
+            val intent = Intent(this, MainPageActivity::class.java)
+            intent.putExtra("USER_ID", userId) // Если хотите передать userId и на главную
+            startActivity(intent)
         }
 
         profileButton.setOnClickListener {
-            navigateToProfile()
+            val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("USER_ID", userId) // Передаем userId
+            startActivity(intent)
         }
 
         dateEditText.setOnClickListener {
@@ -121,42 +146,5 @@ class AddAppointmentActivity : AppCompatActivity() {
         }, year, month, day)
 
         datePickerDialog.show()
-    }
-
-    private fun saveAppointment() {
-        val doctorSpecialization = doctorEditText.text.toString().trim()
-        val appointmentDate = dateEditText.text.toString().trim()
-        val comment = commentEditText.text.toString().trim()
-
-        if (doctorSpecialization.isEmpty()) {
-            Toast.makeText(this, "Пожалуйста, укажите специализацию врача", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        if (appointmentDate.isEmpty()) {
-            Toast.makeText(this, "Пожалуйста, укажите дату записи", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val appointmentId = dbHelper.addAppointment(userId, doctorSpecialization, appointmentDate, comment)
-
-        if (appointmentId != -1L) {
-            Toast.makeText(this, "Запись сохранена", Toast.LENGTH_SHORT).show()
-            finish()
-        } else {
-            Toast.makeText(this, "Ошибка при сохранении записи", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    private fun navigateToProfile() {
-        val intent = Intent(this, ProfileActivity::class.java)
-        intent.putExtra("USER_ID", userId)
-        startActivity(intent)
-    }
-
-    private fun navigateToMain() {
-        val intent = Intent(this, MainPageActivity::class.java)
-        intent.putExtra("USER_ID", userId)
-        startActivity(intent)
     }
 }
