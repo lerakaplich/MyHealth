@@ -154,7 +154,7 @@
         android:layout_width="315dp"
         android:layout_height="48dp"
         android:background="#FFA500"
-        android:hint="Введите дату записи"
+        android:hint="  Введите дату записи"
         android:inputType="date"
         android:textSize="16sp"
         android:textStyle="italic"

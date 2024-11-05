@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.kaplich.myhealth.NativeLib
 import com.kaplich.myhealth.R
 import com.kaplich.myhealth.database.DatabaseHelper
 import kotlin.random.Random
@@ -21,15 +22,21 @@ class RegistrationActivity : AppCompatActivity() {
     private lateinit var labelTextView: TextView
 
     private lateinit var dbHelper: DatabaseHelper
+    private val nativeLib = NativeLib() // Инициализация NativeLib
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
+        // Инициализация генератора случайных чисел
+        nativeLib.initRandom()
+
         dbHelper = DatabaseHelper(this)
         initializeViews()
         setupListeners()
     }
+
+    // Остальной код остается прежним...
 
     private fun initializeViews() {
         nameEditText = findViewById(R.id.nameEnter)

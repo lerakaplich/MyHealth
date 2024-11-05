@@ -1,11 +1,11 @@
 package com.kaplich.myhealth
 
-object NativeLib {
+class NativeLib {
     init {
-        System.loadLibrary("native_lib")
+        System.loadLibrary("native_lib") // Название вашей нативной библиотеки
     }
 
+    external fun initRandom() // Новый метод для инициализации генератора случайных чисел
     external fun registerUser(name: String, password: String): Long
-    external fun loginUser(userId: Int, password: String): Boolean
-    external fun getUserName(userId: Long): String // Добавьте этот метод
+    external fun getUserName(userId: Long): String?
 }

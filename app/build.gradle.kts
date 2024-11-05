@@ -9,7 +9,7 @@ android {
 
     externalNativeBuild {
         cmake {
-            path = file("src/main/cpp/CMakeLists.txt") // Используем file() для указания пути
+            path = file("src/main/cpp/CMakeLists.txt")
         }
     }
 
@@ -24,6 +24,12 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        externalNativeBuild {
+            cmake {
+                abiFilters("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+            }
+        }
+
     }
 
     buildTypes {
